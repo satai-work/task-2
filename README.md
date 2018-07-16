@@ -7,6 +7,7 @@
 6. parametrize /etc/ansible/roles/elastic_3_nodes/defaults/main.yml
 
 ## How to deploy roles via playbooks:
-* dry run with diff on default staging hosts via limit host `ansible-playbook /etc/ansible/playbook/<file>.yml -C -D`
-* `ansible-playbook /etc/ansible/playbook/elastic_3_nodes.yml --limit=elastic_3_nodes`
-* one host install `ansible-playbook /etc/ansible/playbook/elastic_3_nodes.yml -i /etc/ansible/elastic_3_nodes --limit=nsk-bsv-rmq01`
+* dry run with diff on default staging inventory via limit host `ansible-playbook /etc/ansible/playbook/.yml elastic_3_nodes -C -D --limit=<hosts or group>`
+* one host install `ansible-playbook /etc/ansible/playbook/elastic_3_nodes.yml -i /etc/ansible/elastic_3_nodes --limit=<host or group>`
+* via defaut inventory: `ansible-playbook /etc/ansible/playbook/elastic_3_nodes.yml --limit=elastic_3_nodes`
+
