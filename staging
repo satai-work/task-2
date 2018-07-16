@@ -1,7 +1,7 @@
 [any_staging_group]
 #any_hosts_list
 
-[elastic_3_nodes]
+[elastic_cluster]
 nsk-bsv-rmq01
 nsk-bsv-rmq02
 nsk-bsv-rmq03

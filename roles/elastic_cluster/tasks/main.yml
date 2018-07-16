@@ -1,5 +1,5 @@
 ---
-# tasks file for elasticsearch 3 nodes prepare
+# tasks file for elasticsearch with any nodes prepare
 
 - name: Debian - repository key
   become: yes
@@ -49,6 +49,6 @@
   lineinfile:
     dest: /etc/elasticsearch/elasticsearch.yml
     regexp: '(discovery.zen.ping.unicast.hosts)'
-    line: "discovery.zen.ping.unicast.hosts: {{ groups['elastic_3_nodes'] | to_json }}"
+    line: "discovery.zen.ping.unicast.hosts: {{ groups['elastic_cluster'] | to_json }}"
     backup: yes
 
