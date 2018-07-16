@@ -9,6 +9,6 @@
 6. parametrize /etc/ansible/roles/elastic_cluster/defaults/main.yml
 
 ## How to deploy roles via playbooks:
-* dry run with diff on default staging inventory via limit host `ansible-playbook /etc/ansible/playbook/elastic_cluster.yml -C -D --limit=<hosts or group>`
-* one host or group install `ansible-playbook /etc/ansible/playbook/elastic_cluster.yml --limit=<host or group>`
-* via defaut inventory: `ansible-playbook /etc/ansible/playbook/elastic_cluster.yml --limit=elastic_cluster`
+* dry run with diff on default staging inventory via limit host `ansible-playbook /etc/ansible/playbook/elastic_install.yml -C -D --limit=<hosts or group>`
+* one host or group install `ansible-playbook /etc/ansible/playbook/elastic_install.yml --limit=<host or group>`
+* via defaut inventory: `ansible-playbook /etc/ansible/playbook/elastic_install.yml --limit=elastic_cluster`
