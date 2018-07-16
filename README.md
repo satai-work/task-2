@@ -1,4 +1,4 @@
-# Simple deploy elasticsearch cluester 
+# Simple deploy elasticsearch cluster 
 
 ## Installation
 1. add hosts as many as you need to /etc/ansible/staging inventory in group elasticsearch_cluster or create your host inventory named elasticsearch_cluster
