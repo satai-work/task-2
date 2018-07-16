@@ -1,5 +1,5 @@
 [any_staging_group]
-#any_hosts_list
+any_hosts_list
 
 [elastic_cluster]
 nsk-bsv-rmq01
