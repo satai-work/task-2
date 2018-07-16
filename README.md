@@ -1,7 +1,7 @@
 1. add hosts to /etc/ansible/staging inventory in group elasticsearch_3_nodes or create your host inventory with name elasticsearch_3_nodes 
 2. install ansible &
 3. ssh-keygen (only first run)
-4. scp ~/.ssh/id\_rsa.pub \<user>@<hostanme>:~/.ssh/new via all hosts
+4. scp \~/.ssh/id\_rsa.pub <user>@<hostanme>:~/.ssh/new via all hosts
 5. on host: cat ~/.ssh/new >> ~/.ssh/authorized_keys && rm -f ./new
 6. parametrize /etc/ansible/roles/elastic_3_nodes/defaults/main.yml
 
