@@ -1,0 +1,4 @@
+- hosts: all
+  roles:
+    - elastic_3_nodes
+

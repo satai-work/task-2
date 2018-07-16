@@ -1,0 +1,54 @@
+---
+# tasks file for elasticsearch 3 nodes prepare
+
+- name: Debian - repository key
+  become: yes
+  apt_key: url={{ aptkey }} state=present
+
+- name: Debian - apt-transport-https as recommended on site
+  become: yes
+  apt: name=apt-transport-https state=present
+
+- name: Debian - repository
+  become: yes
+  apt_repository: repo={{ apturl }} state=present
+
+- name: Debian - remove elaticsearch
+  become: yes
+  apt:
+    name: 'elasticsearch'
+    state: absent
+    purge: yes
+
+- name: Debian - install elaticsearch
+  become: yes
+  apt:
+    name: 'elasticsearch'
+    state: present
+    allow_unauthenticated: yes
+  notify: elasticsearch restart
+
+- name: Сonfigure elasticsearch clustername
+  become: yes
+  lineinfile:
+    dest: /etc/elasticsearch/elasticsearch.yml
+    regexp: '(cluster.name)'
+    line: 'cluster.name: {{ cluster_name }}'
+    backup: yes
+
+- name: Configure elasticsearch binding address
+  become: yes
+  lineinfile:
+    dest: /etc/elasticsearch/elasticsearch.yml
+    regexp: '(network.host)'
+    line: 'network.host: 0.0.0.0'
+    backup: yes
+
+- name: Configure elasticsearch discovery
+  become: yes
+  lineinfile:
+    dest: /etc/elasticsearch/elasticsearch.yml
+    regexp: '(discovery.zen.ping.unicast.hosts)'
+    line: "discovery.zen.ping.unicast.hosts: {{ groups['elastic_3_nodes'] | to_json }}"
+    backup: yes
+

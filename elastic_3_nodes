@@ -1,0 +1,5 @@
+[elastic_3_nodes]
+nsk-bsv-rmq01
+nsk-bsv-rmq02
+nsk-bsv-rmq03
+

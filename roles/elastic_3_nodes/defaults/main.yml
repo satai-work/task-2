@@ -1,0 +1,6 @@
+---
+aptkey: "https://artifacts.elastic.co/GPG-KEY-elasticsearch"
+apturl: "deb https://artifacts.elastic.co/packages/6.x/apt stable main"
+cluster_name: "elasticsearch_3_nodes"
+
+
